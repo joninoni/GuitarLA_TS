@@ -1,4 +1,16 @@
-const Header = ({cart,removeFromCart,increaseQuantity,decreaseQuantity,clearCart,isEmpty,cartTotal}) => {
+import type { GuitarItem,Guitar  } from "../types"
+
+type HeaderProps = {
+    cart: GuitarItem[]
+    removeFromCart: (id : Guitar["id"]) => void
+    increaseQuantity: (id : Guitar["id"]) => void
+    decreaseQuantity: (id : Guitar["id"]) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotal: number
+}
+
+const Header = ({cart,removeFromCart,increaseQuantity,decreaseQuantity,clearCart,isEmpty,cartTotal} : HeaderProps) => {
 
     return (
         <header className="py-5 header">
