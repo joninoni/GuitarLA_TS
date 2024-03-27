@@ -6,7 +6,7 @@ export type Guitar = {
     price: number
 }
 //herencia en types
-export type GuitarItem = Guitar & {
+export type CartItem = Guitar & {
     quantity: number
 }
 

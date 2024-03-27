@@ -1,8 +1,9 @@
 import { useEffect, useState, useMemo } from "react"
 import {db} from "../data/db.ts"
-import type {Guitar, GuitarItem} from  "../types/index.ts"
-const useCart = () => {
-    const initialCart= () : GuitarItem =>{
+import type {Guitar, CartItem} from  "../types"
+
+export const useCart = () => {
+    const initialCart= () : CartItem[] =>{
         const localStorageCart = localStorage.getItem("cart")
         return localStorageCart ? JSON.parse(localStorageCart) : []
     }
@@ -29,7 +30,7 @@ const useCart = () => {
         }
         else{
             console.log("No existe... agregando al carrito")
-            const newItem : GuitarItem = { ...item,quantity:1}
+            const newItem : CartItem = { ...item,quantity:1}
             setCart([...cart,newItem])
             // setCart( prevCart => [...prevCart,item])
         }

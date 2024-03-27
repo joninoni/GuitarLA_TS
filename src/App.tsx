@@ -1,6 +1,6 @@
-import Guitar from "./Components/Guitar.js"
-import Header from "./Components/Header.js"
-import useCart from "./hooks/useCart.js"
+import Guitar from "./Components/Guitar"
+import Header from "./Components/Header"
+import {useCart} from "./hooks/useCart"
 
 function App() {
     //obteniendo los valores del hook de Cart
